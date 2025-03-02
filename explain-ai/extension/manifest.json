@@ -1,0 +1,34 @@
+{
+    "manifest_version": 3,
+    "name": "Explain with AI",
+    "version": "1.0",
+    "description": "Get AI-powered explanations for any text you select",
+    "permissions": [
+        "contextMenus",
+        "activeTab",
+        "notifications"
+    ],
+    "host_permissions": [
+        "http://localhost:8080/*"
+    ],
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["content-script.js"],
+            "css": ["styles.css"]
+        }
+    ],
+    "action": {
+        "default_icon": {
+            "16": "icon48.png",
+            "48": "icon48.png",
+            "128": "icon128.png"
+        },
+        "default_title": "Explain with AI"
+    },
+    "icons": {
+        "16": "icon48.png",
+        "48": "icon48.png",
+        "128": "icon128.png"
+    }
+}
