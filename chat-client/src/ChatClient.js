@@ -247,8 +247,7 @@ const styles = {
     zIndex: 1000,
     display: 'flex',
     flexDirection: 'column',
-    gap: '20px',
-    padding: '20px'
+    overflow: 'hidden' // Added to contain scrolling
   },
   chatHeader: {
     display: 'flex',
@@ -258,7 +257,8 @@ const styles = {
     borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
     background: 'linear-gradient(135deg, #5e3977, #7a4a93)',
     borderRadius: '12px 12px 0 0',
-    boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)'
+    boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)',
+    flexShrink: 0 // Prevent header from shrinking
   },
   avatarContainer: {
     position: 'relative',
@@ -318,8 +318,8 @@ const styles = {
   tabBar: {
     display: 'flex',
     backgroundColor: '#EFE8FA',
-    borderRadius: '0 0 12px 12px',
-    borderTop: '1px solid rgba(0, 0, 0, 0.1)'
+    borderTop: '1px solid rgba(0, 0, 0, 0.1)',
+    flexShrink: 0 // Prevent tabs from shrinking
   },
   tab: {
     flex: 1,
@@ -372,6 +372,7 @@ const styles = {
     flex: 1,
     display: 'flex',
     flexDirection: 'column',
+    overflow: 'hidden' // Enable proper scrolling containment
   },
   chatWindow: {
     flex: 1,
@@ -380,12 +381,18 @@ const styles = {
     backgroundColor: '#FFF',
     display: 'flex',
     flexDirection: 'column',
-    gap: '12px'
+    gap: '12px',
+    scrollBehavior: 'smooth' // Added smooth scrolling
   },
   inputContainer: {
+    position: 'sticky',
+    bottom: 0,
     display: 'flex',
     gap: '12px',
-    padding: '24px',
+    padding: '16px',
+    backgroundColor: '#FFF',
+    borderTop: '1px solid rgba(0, 0, 0, 0.1)',
+    zIndex: 1 // Ensure input stays above messages
   },
   input: {
     flex: 1,
@@ -519,4 +526,4 @@ const styles = {
   }
 };
 
-export default ChatClient;clea
+export default ChatClient;
